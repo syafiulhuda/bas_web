@@ -1,3 +1,4 @@
+<!-- eslint-disable no-unused-vars -->
 <script setup>
 import TransComp from '../components/TransComp.vue'
 </script>
@@ -5,9 +6,5 @@ import TransComp from '../components/TransComp.vue'
 <template>
   <main>
     <TransComp />
-    <!-- <router-link to="/home">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/transaction">Transaction</router-link>
-    <router-view /> -->
   </main>
 </template>

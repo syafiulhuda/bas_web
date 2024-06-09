@@ -1,14 +1,15 @@
+<!-- eslint-disable no-unused-vars -->
 <script setup>
-// import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/Header.vue'
-// import { useAuthStore } from './stores/auth'
+import { useAuthStore } from './stores/auth'
 
-// const auth = useAuthStore()
+const auth = useAuthStore()
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo_2_bg.png" width="150" height="150" />
+    <img alt="Logo" class="logo" src="@/assets/logo_2_bg.png" width="150" height="150" />
     <div class="wrapper">
       <Header> </Header>
       <!-- <RouterLink to="/">Login</RouterLink> -->
