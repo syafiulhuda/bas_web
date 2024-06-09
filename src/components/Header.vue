@@ -16,7 +16,8 @@ const data = reactive({ param_from_slot: 'Hai from part1 Header' })
 
 <template>
   <div>
-    <h1>Me to All: {{ text }}</h1>
+    <!-- <h1>Welcome to {{ text }}</h1> -->
+    <h1>Centrale <span class="bank">Bank</span> van <span class="zimb">Zimbabwe</span></h1>
 
     <slot />
     <slot name="part_1_header" />
@@ -34,6 +35,13 @@ div {
 }
 
 h1 {
-  color: pink;
+  color: white;
+}
+
+.bank {
+  color: #7fffd4;
+}
+.zimb {
+  color: #7faeff;
 }
 </style>
