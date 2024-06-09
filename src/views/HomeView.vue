@@ -1,9 +1,13 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import TransComp from '../components/TransComp.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <TransComp />
+    <!-- <router-link to="/home">Home</router-link>
+    <router-link to="/about">About</router-link>
+    <router-link to="/transaction">Transaction</router-link>
+    <router-view /> -->
   </main>
 </template>

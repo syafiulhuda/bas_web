@@ -1,25 +1,9 @@
-<!-- eslint-disable no-unused-vars -->
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+// import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/Header.vue'
-import { reactive } from 'vue'
-import { useAuthStore } from './stores/auth'
+// import { useAuthStore } from './stores/auth'
 
-const auth = useAuthStore()
-
-const data = reactive({
-  variable1: 'test variable slot',
-  counter: 1,
-  variable2: [1, 2, 3, 4]
-})
-
-const tambahCounter = () => {
-  data.counter++
-}
-const minusCounter = () => {
-  data.counter--
-}
+// const auth = useAuthStore()
 </script>
 
 <template>
@@ -27,12 +11,12 @@ const minusCounter = () => {
     <img alt="Vue logo" class="logo" src="@/assets/logo_2_bg.png" width="150" height="150" />
     <div class="wrapper">
       <Header> </Header>
-      <!-- <nav v-if="!auth.isloggedIn">
+      <!-- <RouterLink to="/">Login</RouterLink> -->
+      <!-- <nav v-if="!auth.isLoggedIn">
         <RouterLink to="/home">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/transaction">Transaction</RouterLink>
-      </nav>
-      <RouterLink v-else to="/">Login</RouterLink> -->
+      </nav> -->
     </div>
   </header>
 

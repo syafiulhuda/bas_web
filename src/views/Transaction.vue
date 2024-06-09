@@ -1,10 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import TransComp from '../components/TransComp.vue'
+import TransactionComp from '../components/TransactionComp.vue'
 </script>
 
 <template>
   <main>
-    <TransComp />
+    <TransactionComp />
   </main>
 </template>

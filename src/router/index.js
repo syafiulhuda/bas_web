@@ -1,3 +1,5 @@
+// src/router/index.js
+
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
@@ -7,51 +9,36 @@ const router = createRouter({
     {
       path: '/',
       name: 'login',
-      component: () => import('../views/Login.vue')
+      component: () => import('../views/Login.vue'),
+      meta: { title: 'Login' }
     },
     {
       path: '/home',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: { title: 'Home' }
     },
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/AboutView.vue'),
+      meta: { title: 'About' }
     },
     {
       path: '/transaction',
       name: 'transaction',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/Transaction.vue')
+      component: () => import('../views/Transaction.vue'),
+      meta: { title: 'Transaction' }
     }
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: HomeView
-    // },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
-    // },
-    // {
-    //   path: '/login',
-    //   name: 'Login',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/Login.vue')
-    // },
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  // Mengatur judul halaman
+  if (to.meta.title) {
+    document.title = `CBvZ - ${to.meta.title}`
+  }
+  next()
 })
 
 export default router
