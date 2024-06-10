@@ -20,7 +20,6 @@ const auth = useAuthStore()
       </nav> -->
     </div>
   </header>
-
   <RouterView />
 </template>
 
@@ -38,7 +37,7 @@ header {
 }
 
 .wrapper {
-  display: flex; /* Gunakan Flexbox untuk wrapper */
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   flex-wrap: wrap;

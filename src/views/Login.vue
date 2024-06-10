@@ -57,58 +57,43 @@ export default {
 </script>
 
 <template>
-  <v-card variant="tonal" class="pa-5 black-background mr-3">
-    <v-container>
-      <v-row align="center">
-        <v-col cols="12" md="4">
+  <v-container class="d-flex justify-center align-center fill-height">
+    <v-card class="pa-5 black-background custom-width">
+      <v-row>
+        <v-col cols="12" md="4" class="text-center d-flex justify-center align-center">
           <img alt="Bank Logo" class="logo" src="@/assets/logo_bg.png" width="150" height="150" />
         </v-col>
         <v-col cols="12" md="8">
-          <div class="container">
-            <v-responsive class="mx-auto mb-3">
-              <v-text-field
-                dense
-                hide-details="auto"
-                label="Username"
-                type="email"
-                :rules="[rules.required]"
-                v-model="data.username"
-              ></v-text-field>
-            </v-responsive>
-            <v-responsive class="mx-auto mb-2">
-              <v-text-field
-                dense
-                hint="Enter your password to access this website"
-                label="Password"
-                type="password"
-                :rules="[rules.required]"
-                v-model="data.password"
-              ></v-text-field>
-            </v-responsive>
-            <v-responsive class="mx-auto mb-2">
-              <v-btn
-                block
-                dense
-                height="40"
-                rounded="xl"
-                size="x-large"
-                @click="login"
-                class="button"
-              >
-                Login
-              </v-btn>
-            </v-responsive>
-            <v-snackbar v-model="data.snackbar">
-              {{ data.pesanLogin }}
-              <template v-slot:actions>
-                <v-btn color="pink" variant="text" @click="data.snackbar = false"> Close </v-btn>
-              </template>
-            </v-snackbar>
-          </div>
+          <v-form>
+            <v-text-field
+              dense
+              hide-details="auto"
+              label="Username"
+              type="email"
+              class="mb-4"
+              :rules="[rules.required]"
+              v-model="data.username"
+            ></v-text-field>
+            <v-text-field
+              dense
+              hint="Enter your password to access this website"
+              label="Password"
+              type="password"
+              :rules="[rules.required]"
+              v-model="data.password"
+            ></v-text-field>
+            <v-btn block @click="login" class="button">Login</v-btn>
+          </v-form>
         </v-col>
       </v-row>
-    </v-container>
-  </v-card>
+      <v-snackbar v-model="data.snackbar">
+        {{ data.pesanLogin }}
+        <template v-slot:actions>
+          <v-btn color="pink" text @click="data.snackbar = false">Close</v-btn>
+        </template>
+      </v-snackbar>
+    </v-card>
+  </v-container>
 </template>
 
 <style scoped>
@@ -129,5 +114,10 @@ export default {
   outline: none;
   display: block;
   margin: 0 auto;
+}
+
+.custom-width {
+  max-width: 900px;
+  width: 100%;
 }
 </style>
